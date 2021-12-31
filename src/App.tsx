@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import Unicafe from './Unicafe';
 
 function App() {
     return (
         <div className="App">
-            <h1>Hello world!</h1>
+            <h1>Part 1</h1>
+            <Unicafe />
         </div>
     );
 }
