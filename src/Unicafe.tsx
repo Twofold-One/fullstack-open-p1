@@ -29,6 +29,14 @@ const Statistics = ({ good, neutral, bad }: StatisitcsProps) => {
     const average = (good - bad) / total;
     const positive = good / total;
 
+    if (good + neutral + bad === 0) {
+        return (
+            <div>
+                <p>No feedback given</p>
+            </div>
+        );
+    }
+
     return (
         <div>
             <div>
@@ -37,8 +45,11 @@ const Statistics = ({ good, neutral, bad }: StatisitcsProps) => {
                 <StatLine text={'neutral'} score={neutral} />
                 <StatLine text={'bad'} score={bad} />
                 <StatLine text={'total'} score={total} />
-                <StatLine text={'average'} score={average} />
-                <StatLine text={'positive'} score={positive} />
+                <StatLine text={'average'} score={Number(average.toFixed(2))} />
+                <StatLine
+                    text={'positive'}
+                    score={Number(positive.toFixed(2))}
+                />
             </div>
         </div>
     );
